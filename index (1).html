@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeAI - AI Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="brand"><span class="logo">✦</span> ResumeAI</div>
+    <button class="nav-btn" onclick="showBuilder()">Create Resume</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="badge">✦ Powered by Generative AI</div>
+      <h1>Build Your Professional<br><span>Resume with AI</span></h1>
+      <p>Turn your details into a polished, recruiter-ready resume with smart suggestions and a clean professional preview.</p>
+      <button class="primary" onclick="showBuilder()">Create Resume →</button>
+      <button class="secondary" onclick="showBuilder()">Improve Resume</button>
+      <small>No sign-up needed • Works in your browser</small>
+    </section>
+
+    <section id="builder" class="builder hidden">
+      <div class="section-head">
+        <div>
+          <div class="badge">Resume Builder</div>
+          <h2>Create your resume</h2>
+          <p>Enter your details and generate a professional resume preview.</p>
+        </div>
+        <button class="secondary" onclick="showHome()">← Home</button>
+      </div>
+
+      <div class="grid">
+        <form id="resumeForm" class="card">
+          <h3>Personal Information</h3>
+          <input id="name" placeholder="Full Name" required>
+          <input id="email" type="email" placeholder="Email" required>
+          <input id="phone" placeholder="Phone">
+          <input id="location" placeholder="Location">
+          <textarea id="summary" placeholder="Short professional summary"></textarea>
+
+          <h3>Education</h3>
+          <input id="education" placeholder="Degree, College, Year">
+
+          <h3>Skills</h3>
+          <input id="skills" placeholder="Python, Java, SQL, Data Science">
+
+          <h3>Experience / Projects</h3>
+          <textarea id="experience" placeholder="Describe your internship, project or experience"></textarea>
+
+          <button class="primary full" type="submit">Generate Resume ✦</button>
+        </form>
+
+        <div class="card preview">
+          <div class="preview-top">
+            <h3>Resume Preview</h3>
+            <button class="secondary" onclick="window.print()">Download / Print PDF</button>
+          </div>
+          <article id="resumePreview">
+            <h1>Your Name</h1>
+            <p class="contact">email@example.com • Phone • Location</p>
+            <hr>
+            <h4>PROFILE</h4>
+            <p>Add your details and click Generate Resume.</p>
+            <h4>EDUCATION</h4>
+            <p>—</p>
+            <h4>SKILLS</h4>
+            <p>—</p>
+            <h4>EXPERIENCE / PROJECTS</h4>
+            <p>—</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
